@@ -1,0 +1,11 @@
+<div class="wrapper">
+  @for (book of data; track book.id) {
+  <div class="book">
+    <div class="book-image">
+      <img [src]="book.thumbnailUrl" [alt]="book.name" />
+    </div>
+    <h3>{{ book.name }}</h3>
+    <span>{{ book.categories![0] }}</span>
+  </div>
+  }
+</div>

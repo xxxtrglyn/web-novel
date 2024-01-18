@@ -1,7 +1,4 @@
-<div
-  class="wrapper"
-  [style.backgroundImage]="'url(\'' + data[index].thumbnailUrl + '\')'"
->
+<div class="wrapper">
   <div class="cover">
     <img [src]="data[index].thumbnailUrl" alt="cover of a book" />
   </div>
@@ -9,4 +6,17 @@
     <h3>{{ data[index].name }}</h3>
     <p>{{ data[index].description }}</p>
   </div>
+  <div class="control-btns">
+    @for (item of data; track item.id; let idx = $index) {
+    <div
+      class="btn"
+      [class.isActived]="idx === index"
+      (click)="indexChangeHandler(idx)"
+    ></div>
+    }
+  </div>
+  <div
+    class="background"
+    [style.backgroundImage]="'url(\'' + data[index].thumbnailUrl + '\')'"
+  ></div>
 </div>

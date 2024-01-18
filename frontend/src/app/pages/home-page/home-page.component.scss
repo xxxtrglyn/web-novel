@@ -1,12 +1,13 @@
 @import "../../../assets/styles/variables.scss";
 
 .main {
-  padding: 0px 50px;
+  padding: 0px 10%;
   .part {
     display: flex;
     gap: 50px;
     app-section {
       flex: 1;
+      overflow: hidden;
     }
   }
 }
