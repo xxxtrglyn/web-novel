@@ -18,7 +18,7 @@
     </li>
   </ul>
   <ul class="part">
-    <li class="item">
+    <li class="item search">
       <img src="../../../../assets/icons/search.svg" />
     </li>
     <li class="item">
@@ -30,5 +30,6 @@
     <li class="item">
       <img src="../../../../assets/icons/preference.svg" />
     </li>
+    <app-button (clicked)="openLoginDialog()" [label]="'SIGN IN'"></app-button>
   </ul>
 </header>

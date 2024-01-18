@@ -1,0 +1,19 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.wrapper {
+  padding: 13px 20px;
+  background-color: $blue-01;
+  outline: none;
+  border: none;
+  box-shadow: $blue-02 0px 0.00168905px 0.0033781px 0px;
+  border-radius: 9999px;
+  cursor: pointer;
+  span {
+    color: $white-01;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}

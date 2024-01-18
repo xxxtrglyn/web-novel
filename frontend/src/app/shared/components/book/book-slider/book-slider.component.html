@@ -1,0 +1,12 @@
+<div
+  class="wrapper"
+  [style.backgroundImage]="'url(\'' + data[index].thumbnailUrl + '\')'"
+>
+  <div class="cover">
+    <img [src]="data[index].thumbnailUrl" alt="cover of a book" />
+  </div>
+  <div class="detail">
+    <h3>{{ data[index].name }}</h3>
+    <p>{{ data[index].description }}</p>
+  </div>
+</div>

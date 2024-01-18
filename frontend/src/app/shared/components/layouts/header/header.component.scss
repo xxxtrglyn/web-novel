@@ -1,0 +1,41 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  border-bottom: 1px solid $gray-02;
+  .part {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      span {
+        font-size: 20px;
+        font-weight: bold;
+        color: $gray-01;
+      }
+      &:hover {
+        img {
+          filter: invert(36%) sepia(62%) saturate(5649%) hue-rotate(222deg)
+            brightness(103%) contrast(92%);
+        }
+        span {
+          color: $blue-01;
+        }
+      }
+      &.search {
+        width: 50px;
+        height: 50px;
+        border: 1px solid $gray-02;
+        border-radius: 100rem;
+      }
+    }
+  }
+}

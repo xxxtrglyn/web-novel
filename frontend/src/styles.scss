@@ -1,5 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "./assets/styles/variables.scss";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  &-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+a {
+  cursor: pointer;
+  &:hover {
+    color: $blue-01;
+    text-decoration: underline;
+  }
 }

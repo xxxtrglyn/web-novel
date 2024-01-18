@@ -1,0 +1,30 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  padding: 20px;
+  .cover {
+    flex: 0;
+    img {
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+  }
+  .detail {
+    flex: 1;
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: $white-01;
+      margin-bottom: 25px;
+    }
+    p {
+      color: $white-01;
+    }
+  }
+}
