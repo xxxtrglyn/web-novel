@@ -4,4 +4,5 @@ export interface Book {
   description: string;
   thumbnailUrl: string;
   categories?: string[];
+  rating?: number;
 }

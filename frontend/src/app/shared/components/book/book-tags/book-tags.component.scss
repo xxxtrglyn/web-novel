@@ -1,0 +1,23 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  .tag {
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background-color: $white-01;
+    cursor: pointer;
+    span {
+      text-transform: uppercase;
+      color: $blue-01;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    transition: all 0.2s linear;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}

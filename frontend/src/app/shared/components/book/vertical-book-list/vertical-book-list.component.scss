@@ -1,0 +1,66 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+  .book {
+    height: 120px;
+    display: flex;
+    gap: 10px;
+    .book-cover {
+      flex-shrink: 0;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      img {
+        height: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.2s linear;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+    .top-book {
+      font-size: 18px;
+    }
+    .book-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        color: $black-01;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
+        cursor: pointer;
+      }
+    }
+    cursor: pointer;
+    &:first-child {
+      .top-book {
+        color: red;
+      }
+    }
+    &:nth-child(2) {
+      .top-book {
+        color: orange;
+      }
+    }
+    &:nth-child(3) {
+      .top-book {
+        color: green;
+      }
+    }
+  }
+}

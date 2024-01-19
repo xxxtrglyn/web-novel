@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="top">
+    <div class="img-container">
+      @for (book of data; track book.id;) {
+      <div
+        [style.transform]="getTransform($index)"
+        [style.zIndex]="position[0] === $index ? '2' : '1'"
+        class="book-img"
+      >
+        <img [src]="book.thumbnailUrl" [alt]="book.name" />
+      </div>
+      }
+    </div>
+  </div>
+  <div class="bottom">
+    <a>{{ data[index].name }}</a>
+    <span>{{ data[index].categories }}</span>
+    <p>{{ data[index].description }}</p>
+  </div>
+</div>

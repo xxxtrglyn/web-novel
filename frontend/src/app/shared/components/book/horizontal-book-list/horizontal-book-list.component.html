@@ -1,11 +1,37 @@
 <div class="wrapper">
-  @for (book of data; track book.id) {
-  <div class="book">
-    <div class="book-image">
-      <img [src]="book.thumbnailUrl" [alt]="book.name" />
+  <div class="book-list" [class.isOneLine]="!isWrap">
+    @for (book of data; track book.id) {
+    <div
+      (click)="selectedBookChangeHandler($index)"
+      class="book"
+      [class.isSelected]="isShowSelectedBook && $index === selectedBookIndex"
+    >
+      <div class="book-image">
+        <img [src]="book.thumbnailUrl" [alt]="book.name" />
+      </div>
+      <h3>{{ book.name }}</h3>
+      <span>{{ book.categories![0] }}</span>
     </div>
-    <h3>{{ book.name }}</h3>
-    <span>{{ book.categories![0] }}</span>
+    }
+  </div>
+  @if (isShowSelectedBook) {
+  <div class="selected-book">
+    <div class="left">
+      <img
+        [src]="data![selectedBookIndex].thumbnailUrl"
+        [alt]="data![selectedBookIndex].name"
+      />
+    </div>
+    <div class="right">
+      <a>{{ data![selectedBookIndex].name }}</a>
+      <span>{{ data![selectedBookIndex].categories![0] }}</span>
+      <div class="btns">
+        <app-button [label]="'READ NOW'"></app-button>
+        <div class="add-btn">
+          <img src="../../../../../assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+    </div>
   </div>
   }
 </div>

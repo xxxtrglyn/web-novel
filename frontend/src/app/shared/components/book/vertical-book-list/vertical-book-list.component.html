@@ -1,1 +1,20 @@
-<p>vertical-book-list works!</p>
+<div class="wrapper">
+  @for (book of data; track book.id) {
+  <div class="book">
+    <div class="book-cover">
+      <img [src]="book.thumbnailUrl" [alt]="book.name" />
+    </div>
+    <span class="top-book">{{
+      $index + 1 < 10 ? "0" + ($index + 1) : $index + 1
+    }}</span>
+    <div class="book-info">
+      <a>{{ book.name }}</a>
+      <span>{{ book.categories![0] }}</span>
+      <div class="rating">
+        <img src="../../../../../assets/icons/star.svg" alt="star icon" />
+        <span>{{ book.rating }}</span>
+      </div>
+    </div>
+  </div>
+  }
+</div>

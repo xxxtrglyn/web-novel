@@ -3,11 +3,47 @@
     <app-section [label]="'Weekly Book'">
       <app-book-slider content></app-book-slider>
     </app-section>
-    <app-section [label]="'Meet Webnovel'"></app-section>
+    <app-section [label]="'Meet Webnovel'">
+      <app-book-carousel content></app-book-carousel>
+    </app-section>
   </div>
   <div class="part">
     <app-section [label]="'Potential Starlet'">
       <app-horizontal-book-list content></app-horizontal-book-list>
     </app-section>
+  </div>
+  <div class="part">
+    <app-section [label]="'Carousel'">
+      <app-book-carousel content></app-book-carousel>
+    </app-section>
+    <app-section [label]="'Carousel'">
+      <app-book-carousel content></app-book-carousel>
+    </app-section>
+  </div>
+  <div class="part">
+    <app-section [label]="'Vertical List'">
+      <app-vertical-book-list content></app-vertical-book-list>
+    </app-section>
+    <app-section [label]="'Vertical List'">
+      <app-vertical-book-list content></app-vertical-book-list>
+    </app-section>
+    <app-section [label]="'Vertical List'">
+      <app-vertical-book-list content></app-vertical-book-list>
+    </app-section>
+  </div>
+  <div class="part">
+    <app-section [label]="'Top Fantic Tags'">
+      <app-book-tags content></app-book-tags>
+    </app-section>
+  </div>
+  <div class="part">
+    <app-section [label]="'Potential Starlet'">
+      <app-horizontal-book-list
+        [isWrap]="false"
+        [isShowSelectedBook]="true"
+        content
+      ></app-horizontal-book-list>
+    </app-section>
+    <app-section [label]="'something'"></app-section>
   </div>
 </main>
