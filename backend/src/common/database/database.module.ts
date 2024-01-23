@@ -1,20 +1,14 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Book } from 'src/book/entities/book.entity';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 8282,
-      username: 'root',
-      password: 'root',
-      database: 'webnovel',
-      synchronize: false,
-      entities: [Book],
-      migrations: [],
-      migrationsTableName: 'book_migrations',
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) =>
+        configService.get('typeorm'),
+      inject: [ConfigService],
     }),
   ],
 })
