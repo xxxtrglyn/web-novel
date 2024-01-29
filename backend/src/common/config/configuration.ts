@@ -8,10 +8,10 @@ export const databaseConfig = {
   username: `${process.env.DATABASE_USERNAME}`,
   password: `${process.env.DATABASE_PASSWORD}`,
   database: `${process.env.DATABASE_NAME}`,
-  entities: [`${__dirname}/../src/entities/*.entity{.ts,.js}`],
-  migrations: [`${__dirname}/migrations/*{.ts,.js}`],
-  autoLoadEntities: true,
-  synchronize: true,
+  logging: false,
+  entities: [__dirname + '/entities/*{.js,.ts}'],
+  migrations: [__dirname + '/migrations/*{.js,.ts}'],
+  synchronize: false,
 };
 
 export default registerAs('typeorm', () => databaseConfig);

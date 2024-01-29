@@ -2,7 +2,7 @@ import { IsNotEmpty } from 'class-validator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Book {
+export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,10 +16,4 @@ export class Book {
   @IsNotEmpty()
   @Column()
   thumbnailUrl: string;
-
-  // @Column()
-  // categories:
-
-  // @Column()
-  // rating?:
 }

@@ -1,11 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
+import { Repository } from 'typeorm';
+import { Book } from 'src/entities/book.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class BookService {
+  constructor(
+    @InjectRepository(Book) private bookRepository: Repository<Book>,
+  ) {}
   create(createBookDto: CreateBookDto) {
-    return 'This action adds a new book';
+    this.bookRepository.create(createBookDto);
   }
 
   findAll() {
