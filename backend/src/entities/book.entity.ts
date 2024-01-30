@@ -1,5 +1,12 @@
 import { IsNotEmpty } from 'class-validator';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Category } from './category.entity';
 
 @Entity()
 export class Book {
@@ -17,8 +24,9 @@ export class Book {
   @Column()
   thumbnailUrl: string;
 
-  // @Column()
-  // categories:
+  @ManyToMany(() => Category)
+  @JoinTable()
+  categories: Category[];
 
   // @Column()
   // rating?:

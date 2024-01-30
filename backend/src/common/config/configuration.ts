@@ -1,4 +1,6 @@
 import { registerAs } from '@nestjs/config';
+import { Book } from 'src/entities/book.entity';
+import { Category } from 'src/entities/category.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
 export const databaseConfig = {
@@ -9,7 +11,7 @@ export const databaseConfig = {
   password: `${process.env.DATABASE_PASSWORD}`,
   database: `${process.env.DATABASE_NAME}`,
   logging: false,
-  entities: [__dirname + '/entities/*{.js,.ts}'],
+  entities: [Book, Category],
   migrations: [__dirname + '/migrations/*{.js,.ts}'],
   synchronize: false,
 };

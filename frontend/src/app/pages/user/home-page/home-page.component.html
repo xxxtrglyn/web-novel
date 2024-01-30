@@ -1,7 +1,7 @@
 <main class="main">
   <div class="part">
     <app-section [label]="'Weekly Book'">
-      <app-book-slider content></app-book-slider>
+      <app-book-slider [data]="bookList" content></app-book-slider>
     </app-section>
     <app-section [label]="'Meet Webnovel'">
       <app-book-carousel content></app-book-carousel>

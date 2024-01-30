@@ -17,8 +17,6 @@ export class BookController {
 
   @Post()
   create(@Body() createBookDto: CreateBookDto) {
-    console.log(createBookDto);
-
     return this.bookService.create(createBookDto);
   }
 

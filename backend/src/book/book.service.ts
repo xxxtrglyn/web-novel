@@ -10,16 +10,18 @@ export class BookService {
   constructor(
     @InjectRepository(Book) private bookRepository: Repository<Book>,
   ) {}
-  create(createBookDto: CreateBookDto) {
-    this.bookRepository.create(createBookDto);
+  async create(createBookDto: CreateBookDto) {
+    const book = this.bookRepository.create(createBookDto);
+    await this.bookRepository.save(book);
+    return book;
   }
 
   findAll() {
-    return `This action returns all book`;
+    return this.bookRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} book`;
+    return this.bookRepository.findOne({ where: { id: id } });
   }
 
   update(id: number, updateBookDto: UpdateBookDto) {
